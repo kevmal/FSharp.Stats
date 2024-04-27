@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Program.NthrootDouble-20240425-100018</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3447/23H2/2023Update/SunValley3)
+Intel Core i7-10750H CPU 2.60GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 6.0.421
+  [Host]     : .NET 6.0.29 (6.0.2924.17105), X64 RyuJIT AVX2 DEBUG
+  DefaultJob : .NET 6.0.29 (6.0.2924.17105), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method            </th><th>n</th><th>Mean </th><th>Error</th><th>StdDev</th>
+</tr>
+</thead><tbody><tr><td>nthroot</td><td>2</td><td>620.9 &mu;s</td><td>11.22 &mu;s</td><td>9.94 &mu;s</td>
+</tr><tr><td>nthroot_typecheck</td><td>2</td><td>890.2 &mu;s</td><td>17.31 &mu;s</td><td>22.51 &mu;s</td>
+</tr><tr><td>nthroot_typecheck_inline</td><td>2</td><td>687.9 &mu;s</td><td>7.26 &mu;s</td><td>6.79 &mu;s</td>
+</tr><tr><td>nthroot</td><td>3</td><td>1,529.5 &mu;s</td><td>22.01 &mu;s</td><td>20.59 &mu;s</td>
+</tr><tr><td>nthroot_typecheck</td><td>3</td><td>1,837.4 &mu;s</td><td>35.78 &mu;s</td><td>35.14 &mu;s</td>
+</tr><tr><td>nthroot_typecheck_inline</td><td>3</td><td>1,530.7 &mu;s</td><td>7.82 &mu;s</td><td>6.11 &mu;s</td>
+</tr><tr><td>nthroot</td><td>5</td><td>5,321.5 &mu;s</td><td>61.20 &mu;s</td><td>57.25 &mu;s</td>
+</tr><tr><td>nthroot_typecheck</td><td>5</td><td>6,275.4 &mu;s</td><td>76.85 &mu;s</td><td>68.13 &mu;s</td>
+</tr><tr><td>nthroot_typecheck_inline</td><td>5</td><td>5,412.9 &mu;s</td><td>43.83 &mu;s</td><td>41.00 &mu;s</td>
+</tr><tr><td>nthroot</td><td>10</td><td>38,391.9 &mu;s</td><td>296.42 &mu;s</td><td>262.77 &mu;s</td>
+</tr><tr><td>nthroot_typecheck</td><td>10</td><td>47,059.5 &mu;s</td><td>1,029.75 &mu;s</td><td>3,020.08 &mu;s</td>
+</tr><tr><td>nthroot_typecheck_inline</td><td>10</td><td>38,641.6 &mu;s</td><td>644.45 &mu;s</td><td>602.82 &mu;s</td>
+</tr></tbody></table>
+</body>
+</html>
